@@ -1,0 +1,418 @@
+/* General Styling */
+body, html 
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Cormorant Garamond', serif;
+    background-color: rgb(248, 240, 244);
+}
+
+/* Styles for Header Quote */
+.quote 
+{
+    text-align: center;
+    font-style: italic;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 3px;
+    color: darkslateblue;
+    letter-spacing: 1.2px;
+    background-color: rgb(253, 184, 205);
+}
+
+
+
+
+/* Styles for Navigation Bar */
+nav 
+{
+    display: flex;
+    justify-content: space-between;
+    align-items:end;
+    padding: 20px 20px;
+    background-color: rgb(248, 240, 244); /* Adjust as needed */
+}
+
+/* Main Title Styles */
+.title 
+{
+    margin-left: 70px;
+}
+
+/* Navigation Bar Links */
+.navbar1 
+{
+    list-style: none;
+    display: flex;
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.navbar1 li {
+    position: relative;
+    margin: 0 20px; /* Adjust spacing between items */
+}
+
+/* Triangle Next to Navbar Items */
+.navbar1 li::after 
+{
+    content: "";
+    position: absolute;
+    right: -15px; /* Adjust as needed for spacing */
+    top: 50%;
+    border-left: 6px solid transparent; /* Triangle properties */
+    border-right: 6px solid transparent;
+    border-top: 6px solid darkslateblue; /* Triangle color */
+    transform: translateY(-50%); /* Center the triangle vertically */
+}
+
+/* Link Styling in Main Navbar */
+.navbar1 a 
+{
+    text-decoration: none; /* Remove default underline */
+    position: relative; /* Needed for the pseudo-element positioning */
+    padding-bottom: 4px; /* Adds space for the underline */
+    transition: opacity 0.3s ease, color 0.3s ease; /* Animation for opacity and color change */
+}
+
+/* Underline Effect on Hover */
+.navbar1 a::before 
+{
+    content: "";
+    position: absolute;
+    bottom: 0; /* Position underline at the bottom */
+    width: 0; /* Start with zero width */
+    height: 3px; /* Thickness of the underline */
+    background-color: darkslateblue; /* Color of the underline */
+    transition: width 0.2s ease; /* Animation for width change */
+}
+
+.navbar1 a:hover::before 
+{
+    width: 100%; /* Expand the underline to full width on hover */
+}
+
+/* Dropdown Menu Styles */
+.dropdown 
+{
+    position: relative; /* Required for absolute positioning of dropdown menu */
+}
+
+.dropdown-menu 
+{
+    display: none; /* Hide the dropdown menu by default */
+    position: absolute;
+    top: 134%; /* Position it directly below the parent item */
+    left: 0; /* Align it to the left edge of the parent item */
+    background-color: rgb(248, 240, 244); /* Background color of dropdown */
+    list-style: none;
+    padding: 1px;
+    margin: 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Optional shadow for better visibility */
+    text-align: left; /* Center the text inside dropdown menu */
+    min-width: 180px; /* Set a minimum width for the dropdown menu */
+    border-radius: 4px; /* Optional: rounded corners */
+    z-index: 1000; /* Ensure dropdown appears above other content */
+}
+
+.dropdown-menu li 
+{
+    padding: 10px 0; /* Adjust vertical padding for spacing */
+}
+
+.dropdown-menu a 
+{
+    color: darkslateblue; /* Text color */
+    text-decoration: none; /* Remove default underline */
+    display: block; /* Make the entire area clickable */
+}
+
+.dropdown-menu a:hover 
+{
+    background-color: darkslateblue; /* Background color on hover */
+    color:white; /* Text color on hover */
+}
+
+/* Show dropdown menu on hover of parent item or dropdown menu itself */
+.dropdown:hover .dropdown-menu,
+.dropdown-menu:hover 
+{
+    display: block; /* Show the dropdown menu on hover */
+}
+
+/* Remove triangles from dropdown menu items */
+.dropdown-menu li::after 
+{
+    content: none; /* Remove triangles */
+}
+
+
+
+
+
+infoo 
+{
+    display: flex; /* Use flexbox layout */
+    justify-content: center; /* Center all items horizontally */
+    align-items: center; /* Align items vertically in the center */
+}
+
+ul.info 
+{
+    display: flex; /* Flexbox for the list items */
+    justify-content: center; /* Center the list items */
+    gap: 50px; /* Adds small space between each item (adjust as needed) */
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove default padding from the ul */
+    margin: 0; /* Remove default margin from the ul */
+}
+
+ul.info li 
+{
+    display: inline; /* Ensure li items are inline */
+}
+
+ul.info a 
+{
+    text-decoration: none; /* Remove underline from links */
+    font-weight: bold; /* Bold font for links */
+    color: darkslateblue; /* Adjust color as needed */
+    font-size: 13px; /* Adjust the font size */
+    font-size: 18px;
+}
+
+.cart-icon 
+{
+    width: 16px; /* Adjust the size of the icon */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 5px; /* Add space between the icon and the text */
+}
+
+
+
+
+
+.video-background 
+{
+    position: relative;
+    width: 100%;
+    height: 500px; /* Full viewport height */
+    overflow: hidden;
+}
+
+#bg-video 
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    z-index: 1; /* Ensure video is behind content */
+}
+
+.content 
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #FFF; /* Adjust text color */
+    text-align: center;
+    z-index: 2; /* Ensure content is above the video */
+}
+
+
+
+
+
+/* General Styling for para2 */
+.para2 
+{
+    display: flex; /* To make the content inside flexibly positioned */
+    justify-content: space-between; /* Spread the content to opposite sides */
+    align-items: center; /* Align items vertically in the middle */
+    padding: 20px;
+    background-color: #f8f0f4; /* Light background color */
+    border-radius: 10px; /* Rounded corners */
+    margin: 20px 50px; /* Add spacing around the div */
+}
+
+/* Styling for para21 (left content) */
+.para21 
+{
+    text-align: left; /* Align text to the left */
+}
+
+.para21 h1.popular 
+{
+    font-size: 28px;
+    color: darkslateblue;
+    font-weight: bold;
+    letter-spacing: 1.2px;
+    margin: 0;
+}
+
+.para21 p 
+{
+    font-size: 25px;
+    color: darkslateblue;
+    margin-top: 10px;
+    letter-spacing: 1px;
+}
+
+/* Styling for para22 (right content) */
+.para22 
+{
+    text-align: right; /* Align text to the right */
+}
+
+.buyy 
+{
+    font-size: 25px;
+    color:darkslateblue; /* Blue color for 'Shop All Products' */
+    cursor: pointer; /* Cursor turns into a pointer on hover */
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
+    background-color:antiquewhite;
+    border-color: antiquewhite;
+    border-radius: 8px;
+    padding: 10px;
+    font-style: italic;
+}
+
+.buyy:hover 
+{
+    color: white; /* Change color on hover */
+    background-color: darkslateblue;
+}
+
+
+
+
+
+
+table 
+{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.img-container 
+{
+    width: 33.33%; /* Adjust based on the number of items */
+    padding: 10px;
+    text-align: center;
+}
+
+.content-wrapper 
+{
+    border: 1px solid #ddd; /* Light border around each item */
+    border-radius: 8px; /* Rounded corners */
+    padding: 20px;
+    background-color: rgb(248, 240, 244); /* Light background color */
+    transition: box-shadow 0.3s ease; /* Smooth shadow transition */
+}
+
+.content-wrapper:hover 
+{
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Shadow on hover */
+}
+
+.product-image 
+{
+    max-width: 100%; /* Responsive image */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 5px; /* Rounded image corners */
+}
+
+.product-title 
+{
+    font-size: 20px; /* Title font size */
+    margin: 10px 10px; /* Space around title */
+}
+
+.buts 
+{
+    background-color: darkslateblue; 
+    color: rgb(248, 240, 244); /* White text color */
+    border: none; /* No border */
+    padding: 10px 15px; /* Button padding */
+    text-align: center; /* Centered text */
+    text-decoration: none; /* No underline */
+    display: inline-block; /* Inline-block for button */
+    font-size: 18px; /* Font size for button text */
+    margin-top: 10px; /* Space above button */
+    cursor: pointer; /* Pointer cursor on hover */
+    border-radius: 5px; /* Rounded corners for button */
+    font-weight: bold;
+    transition: opacity 0.15s;
+}
+
+.buts:hover    
+{
+    background-color: white;
+    color: darkslateblue;
+    opacity: 0.5;
+}
+
+
+
+        
+
+
+    
+/* Responsive Styles for Smaller Screens */
+@media (max-width: 768px) {
+    .img-container {
+        width: 100%; /* Make each item take full width on small screens */
+        display: block; /* Ensure they stack vertically */
+        margin-bottom: 20px; /* Space between items */
+    }
+
+    table {
+        display: block; /* Make the table behave like a block element for stacking */
+        overflow-x: auto; /* Allow horizontal scrolling if needed */
+        width: auto; /* Allow width to adjust based on content */
+        border-collapse: separate; /* Separate borders for better visibility in mobile view */
+    }
+}
+
+
+
+
+/* Hamburger Icon */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: white;
+    margin-left: auto; /* Pushes it to the right */
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .navbar1 {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .navbar1 li {
+        text-align: center;
+    }
+
+    .dropdown-menu {
+        position: relative;
+    }
+
+    .hamburger {
+        display: block;
+    }
+}
+
+
+
